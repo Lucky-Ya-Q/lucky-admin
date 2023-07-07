@@ -3,11 +3,77 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" href="/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <title>LuckyAdmin</title>
+    <style>
+      .la-loading {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+      }
+
+      .la-loading-icon {
+        width: 62px;
+        display: inline-flex;
+        flex-wrap: wrap;
+        animation: rotate 1.2s linear infinite;
+      }
+
+      .la-loading-text {
+        color: #666;
+        margin: 16px 0;
+      }
+
+      .la-foliage {
+        width: 25px;
+        height: 25px;
+        margin: 3px;
+      }
+
+      .la-foliage:nth-child(1) {
+        background-color: #e5efc1;
+        border-radius: 50% 50% 0 50%;
+      }
+
+      .la-foliage:nth-child(2) {
+        background-color: #a2dfab;
+        border-radius: 50% 50% 50% 0;
+      }
+
+      .la-foliage:nth-child(3) {
+        background-color: #39aea9;
+        border-radius: 50% 0 50% 50%;
+      }
+
+      .la-foliage:nth-child(4) {
+        background-color: #557b83;
+        border-radius: 0 50% 50% 50%;
+      }
+
+      @keyframes rotate {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
   </head>
   <body>
-    <div id="app"></div>
+    <div id="app">
+      <div class="la-loading">
+        <div class="la-loading-icon">
+          <span class="la-foliage"></span>
+          <span class="la-foliage"></span>
+          <span class="la-foliage"></span>
+          <span class="la-foliage"></span>
+        </div>
+        <p class="la-loading-text">页面加载中</p>
+      </div>
+    </div>
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
